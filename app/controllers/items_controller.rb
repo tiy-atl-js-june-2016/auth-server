@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate!
+  before_action :authenticate!, except: [:index, :show]
   before_action :set_collection!
 
   def create
