@@ -13,9 +13,24 @@ Root URL - [https://https://quiet-waters-26668.herokuapp.com/](https://quiet-wat
   - example: `/collections/asldfjasdjfpoiwre5858323lasdf`
 5. Have fun! :metal: :heart:
 
+At this point all the rules of the REST API/class-server apply.
+Just don't forget to give me a damn Access Token in the headers.
+
 > Ok, you get the point.
 
 ### General Rules
+
+#### Sending Data
+
+All sent data is expected to be JSON formatted.
+Because I'm writing this at midnight, there are
+not kind error messages like Github/good APIs
+have if the data is formatted incorrectly.
+
+Instead, the server will barf at you so hard
+that you'll probably go blind. :boom:
+
+Please, please send all data in JSON format. :heart_eyes:
 
 #### Authorization
 
