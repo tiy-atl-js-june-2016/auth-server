@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate!, except: [:index, :show]
-  before_action :set_collection!
+  before_action :set_user_collection!, only: [:index, :show]
+  before_action :set_curr_collection!, only: [:create, :update, :destroy]
 
   def create
     parse_json!
@@ -38,9 +39,13 @@ class ItemsController < ApplicationController
   end
 
   private
-  def set_collection!
+  def set_readable_collection!
     @user = User.find_by!(username: params[:username])
     @collection = @user.collections.find_or_create_by(title: params[:collection])
+  end
+
+  def set_writable_collection!
+    @collection = current_user.collections.find_or_create_by(title: params[:collection])
   end
 
   # This is so damn purple.
