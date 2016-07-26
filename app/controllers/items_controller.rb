@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :set_collection!
 
   def create
-    @item = @collection.items.new(data: data)
+    parse_json!
+    @item = @collection.items.new(data: @data)
     if @item.save
       render "create.json.jbuilder", status: :created
     else
@@ -22,8 +23,9 @@ class ItemsController < ApplicationController
   end
 
   def update
+    parse_json!
     @item = @collection.items.find(params[:id])
-    if @item.update(data)
+    if @item.update(@data)
       render "show.json.jbuilder", status: :accepted
     else
       render "errors.json.jbuilder", status: :unprocessable_entity
