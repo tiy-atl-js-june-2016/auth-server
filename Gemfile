@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use rack-cors for Frontend joy.
 gem 'rack-cors'
+# Use Kaminari for pagination.
+gem 'kaminari'
 
 gem 'rails_12factor', group: :production
 

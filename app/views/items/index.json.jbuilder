@@ -1,1 +1,1 @@
-@items.pluck(:data)
+json.array! @items.pluck(:data)

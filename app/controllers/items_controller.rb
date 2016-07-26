@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = @collection.items
+    @items = @collection.items.page(params[:page]).per(params[:per_page])
     render "index.json.jbuilder", status: :ok
   end
 
