@@ -39,12 +39,12 @@ class ItemsController < ApplicationController
   end
 
   private
-  def set_readable_collection!
+  def set_user_collection!
     @user = User.find_by!(username: params[:username])
     @collection = @user.collections.find_or_create_by(title: params[:collection])
   end
 
-  def set_writable_collection!
+  def set_curr_collection!
     @collection = current_user.collections.find_or_create_by(title: params[:collection])
   end
 
