@@ -11,16 +11,16 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       render "login.json.builder", status: :ok
     else
-      render json: { errors: "Email or password was incorrect." }, status: :unauthorized
+      render json: { errors: "Username or password was incorrect." }, status: :unauthorized
     end
   end
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :username)
   end
 end

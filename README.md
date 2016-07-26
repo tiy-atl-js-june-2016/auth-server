@@ -48,6 +48,7 @@ and which page or results to return, respectively.
 ```
   * first: string
   * last: string
+  * username: string
   * email: string
   * password: string
 ```
@@ -61,6 +62,7 @@ Returns 201 Created on Success and 422 Unprocessable Entity in case of failure.
 {
   "first": "Brit",
   "last": "Butler",
+  "username": "KingCons",
   "email": "brit@lies.com",
   "password": "cookies"
 }
@@ -74,6 +76,7 @@ Returns 201 Created on Success and 422 Unprocessable Entity in case of failure.
     "id": 35,
     "first_name": "Brit",
     "last_name": "Butler",
+    "username": "KingCons",
     "email": "brit@lies.com",
     "access_token": "7774743beeb3c26dfdd80213ba1b9097"
   }
@@ -98,7 +101,7 @@ Returns 200 on success and 401 on failure.
 
 ```
 {
-  "email": "brit@lies.com",
+  "username": "KingCons",
   "password": "cookies"
 }
 ```
@@ -107,7 +110,7 @@ Returns 200 on success and 401 on failure.
 
 ```
 {
-  "message": "Logged in as 'brit@lies.com'",
+  "message": "Logged in as 'KingCons'",
   "access_token": "7774743beeb3c26dfdd80213ba1b9097"
 }
 ```

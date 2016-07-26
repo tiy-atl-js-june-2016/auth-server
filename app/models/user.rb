@@ -5,6 +5,7 @@ class User < ApplicationRecord
   # has_many :items, through: :collections
 
   validates_presence_of :first_name, :last_name
+  validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true,
             format: { with: /\A[^@]+@[^@]+\.[^@]+\z/,
                       message: "must have an @ symbol and period." }
