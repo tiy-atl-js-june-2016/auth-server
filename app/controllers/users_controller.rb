@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by(username: params[:username])
+    username = params[:username].downcase
+    @user = User.where("lower(username) = ?", username).first
     if @user && @user.authenticate(params[:password])
       render "login.json.builder", status: :ok
     else
