@@ -46,8 +46,8 @@ and which page or results to return, respectively.
 **Params:**
 
 ```
-  * first: string
-  * last: string
+  * first_name: string
+  * last_name: string
   * username: string
   * email: string
   * password: string
@@ -60,8 +60,8 @@ Returns 201 Created on Success and 422 Unprocessable Entity in case of failure.
 
 ```
 {
-  "first": "Brit",
-  "last": "Butler",
+  "first_name": "Brit",
+  "last_name": "Butler",
   "username": "KingCons",
   "email": "brit@lies.com",
   "password": "cookies"
