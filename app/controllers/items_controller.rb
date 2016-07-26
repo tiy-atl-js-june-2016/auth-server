@@ -40,7 +40,6 @@ class ItemsController < ApplicationController
   private
   def set_collection!
     @collection = current_user.collections.find_or_create_by(title: params[:collection])
-    binding.pry
   end
 
   # This is so damn purple.
