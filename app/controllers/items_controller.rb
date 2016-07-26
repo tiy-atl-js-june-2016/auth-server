@@ -39,7 +39,8 @@ class ItemsController < ApplicationController
 
   private
   def set_collection!
-    @collection = current_user.collections.find_or_create_by(title: params[:collection])
+    @user = User.find_by!(username: params[:username])
+    @collection = @user.collections.find_or_create_by(title: params[:collection])
   end
 
   # This is so damn purple.
