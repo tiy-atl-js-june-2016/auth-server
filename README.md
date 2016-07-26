@@ -105,7 +105,7 @@ Returns 201 Created on Success and 422 Unprocessable Entity in case of failure.
 **Params:**
 
 ```
-email: string
+username: string
 password: string
 ```
 
