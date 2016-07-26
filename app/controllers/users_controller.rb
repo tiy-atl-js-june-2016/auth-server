@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     username = params[:username].downcase
     @user = User.where("lower(username) = ?", username).first
     if @user && @user.authenticate(params[:password])
-      render "login.json.builder", status: :ok
+      render "login.json.jbuilder", status: :ok
     else
       render json: { errors: "Username or password was incorrect." }, status: :unauthorized
     end
