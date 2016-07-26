@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :set_collection!
 
   def create
-    data = JSON.parse(request.body)
     @item = @collection.items.new(data: data)
     if @item.save
       render "create.json.jbuilder", status: :created
@@ -23,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    data = JSON.parse(request.body)
     @item = @collection.items.find(params[:id])
     if @item.update(data)
       render "show.json.jbuilder", status: :accepted
@@ -40,5 +38,12 @@ class ItemsController < ApplicationController
   private
   def set_collection!
     @collection = current_user.collections.find_or_create_by(title: params[:collection])
+    binding.pry
+  end
+
+  # This is so damn purple.
+  def parse_json!
+    @data = JSON.parse(request.body.read)
+    request.body.rewind
   end
 end
