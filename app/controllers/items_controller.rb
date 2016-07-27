@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     if @item.save
       render "create.json.jbuilder", status: :created
     else
-      render "errors.json.builder", status: :unprocessable_entity
+      render "errors.json.jbuilder", status: :unprocessable_entity
     end
   end
 
