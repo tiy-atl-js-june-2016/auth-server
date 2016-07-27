@@ -112,7 +112,7 @@ password: string
 **Status Codes:**
 Returns 200 on success and 401 on failure.
 
-***Request:***
+**Request:**
 
 ```
 {
@@ -121,7 +121,7 @@ Returns 200 on success and 401 on failure.
 }
 ```
 
-***Response:***
+**Response:**
 
 ```
 {
